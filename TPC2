@@ -1,0 +1,53 @@
+#computador adivinha
+
+import random
+
+def randlim(a,b):
+    limites=random.randint(a,b)
+    return limites
+
+sup=100
+inf=0
+tentativas=1
+pc=random.randint(1,100)
+jogador=int(input("Escolher número"))
+print("Número escolhido:", jogador)
+print("O número é", pc)
+
+while jogador!=pc:
+    a=input("Maior ou menor?")
+    if a=="maior":
+        inf=pc+1
+    else:
+        inf=inf
+    if a=="menor":
+        sup=sup-1
+    else:
+        inf=inf
+    pc=randlim(inf,sup)
+    print(pc)
+    tentativas=tentativas+1
+
+print(tentativas, "tentativas")
+
+
+
+#jogador adivinha
+
+from random import seed
+from random import randint
+seed()
+N=randint(0,100)
+tentativas = 0
+while nº!=N:
+    nº=int(input("Qual é o número?"))
+    if nº==N:
+        print("Acertou")
+        tentativas=tentativas+1
+        print ("Número de tentativas:",tentativas)
+    elif nº>N:
+        print ("O número que pensei é menor")
+        tentativas=tentativas+1
+    else:
+        print("O número que pensei é maior")
+        tentativas=tentativas+1
